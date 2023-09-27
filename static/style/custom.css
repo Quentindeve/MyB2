@@ -1,0 +1,91 @@
+#header-img {
+    width: 20%;
+    height: 20%;
+}
+
+#map-iframe {
+    width: 50rem;
+    height: 15rem;
+}
+
+table,
+th,
+td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    background-color: #96D4D4;
+}
+
+td {
+    padding: 10px;
+}
+
+.img-table-scale {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+input {
+    background-color: #DDDDDD;
+}
+
+@keyframes zoom-in {
+    from {
+        /* transform: scale(1.0, 1.0); */
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    to {
+        /* transform: scale(3.0, 3.0); */
+        max-width: 400px;
+        max-height: 400px;
+    }
+}
+
+@keyframes zoom-out {
+    from {
+        /* transform: scale(3.0, 3.0); */
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    to {
+        max-width: 150px;
+        max-height: 150px;
+    }
+}
+
+.zoomed {
+    animation: forwards .1s zoom-in;
+}
+
+.unzoomed {
+    animation: linear .1s zoom-out
+}
+
+.dark {
+    background-color: #192021;
+    color: white;
+}
+
+div .dark {
+    background-color: #313233;
+}
+
+.dark-body {
+    background-color: #192021;
+}
+
+#theme-switch {
+    max-width: 25px;
+    max-height: 25px;
+}
+
+#theme-switch:hover {
+    cursor: pointer;
+}
