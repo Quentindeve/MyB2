@@ -10,7 +10,7 @@
 
     if (isset($admin) && $admin) {
         echo '<a href="add_product.php" class="ignore">Ajouter un produit</a>';
-        echo '<a href="delete_product.php class="ignore">Supprimer un produit</a>';
+        echo '<a href="delete_product.php" class="ignore">Supprimer un produit</a>';
         echo '<a href="edit_product.php" class="ignore">Modifier un produit</a>';
     }
     ?>
