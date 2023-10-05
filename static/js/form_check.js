@@ -1,7 +1,6 @@
 const form = document.getElementById("add-form");
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
     let can_continue = true;
     form.childNodes.forEach((child) => {
         if (child.nodeName === "INPUT") {
@@ -12,6 +11,7 @@ form.addEventListener("submit", (e) => {
                 const parsed = parseFloat(child.value);
                 if (isNaN(parsed)) {
                     alert("Fils de pute");
+                    e.preventDefault();
                     can_continue = false;
                 }
             }

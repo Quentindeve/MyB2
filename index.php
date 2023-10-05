@@ -18,8 +18,41 @@
     <div id="description" class="mt-5 flex flex-col items-center">
         <h1 class="text-3xl">Bienvenue sur le site de notre magasin !</h1>
         <p class="text-xl">
-            Sur notre site, vous retrouverez une vaste gamme de grosses queues en plastique spécialement adaptés à tous vos désirs.
+            Retrouvez toutes vos licences de jeu-vidéo préférées sur notre magasin !
         </p>
+        <div class="carousel-container">
+            <h1 class="text-2xl text-center mt-4">Nos produits phares</h1>
+            <div class="carousel">
+                <?php
+                include("config.php");
+                $req = "SELECT image FROM products LIMIT 3";
+                $stmt = $db->prepare($req);
+                $stmt->execute();
+
+                echo "<script>";
+                $i = 0;
+                $first = null;
+                foreach ($stmt->fetchAll() as $img) {
+                    $image = base64_encode($img["image"]);
+                    $image_mime = "image/jpeg";
+                    $img_code = 'data:' . $image_mime . ';base64,' . $image;
+                    if ($i == 0) {
+                        $first = $img_code;
+                    }
+
+                    echo "const image$i = \"$img_code\";";
+                    $i += 1;
+                }
+                echo "</script>";
+                echo
+                "
+            <img src=$first />
+            "
+                ?>
+            </div>
+            <div id="carousel-left" class="carousel-control left">&#10094;</div>
+            <div id="carousel-right" class="carousel-control right">&#10095;</div>
+        </div>
     </div>
 
     <div id="coords" class="mt-5 flex flex-col items-center">
@@ -39,39 +72,6 @@
             </ul>
         </div>
         <p class="text-xl">Contact: <a href="mailto:enflure@gmail.com">enflure@gmail.com</a></p>
-    </div>
-    <div class="carousel-container">
-        <p>Nos produits phares</p>
-        <div class="carousel">
-            <?php
-            include("config.php");
-            $req = "SELECT image FROM products LIMIT 3";
-            $stmt = $db->prepare($req);
-            $stmt->execute();
-
-            echo "<script>";
-            $i = 0;
-            $first = null;
-            foreach ($stmt->fetchAll() as $img) {
-                $image = base64_encode($img["image"]);
-                $image_mime = "image/jpeg";
-                $img_code = 'data:' . $image_mime . ';base64,' . $image;
-                if ($i == 0) {
-                    $first = $img_code;
-                }
-
-                echo "const image$i = \"$img_code\";";
-                $i += 1;
-            }
-            echo "</script>";
-            echo
-            "
-            <img src=$first />
-            "
-            ?>
-        </div>
-        <div id="carousel-left" class="carousel-control left">&#10094;</div>
-        <div id="carousel-right" class="carousel-control right">&#10095;</div>
     </div>
 </body>
 

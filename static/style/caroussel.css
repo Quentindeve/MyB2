@@ -5,9 +5,12 @@
     position: relative;
 }
 
-.carousel {
+.carousel img {
     display: flex;
     transition: transform 0.5s ease;
+    z-index: -1;
+    max-height: 300px;
+    min-height: 200px;
 }
 
 .carousel img {
