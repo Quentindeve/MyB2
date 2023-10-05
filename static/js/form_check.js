@@ -9,7 +9,7 @@ form.addEventListener("submit", (e) => {
 
             const type = child.type;
             if (child.classList.contains("number")) {
-                const parsed = parseFloat(child.textContent);
+                const parsed = parseFloat(child.value);
                 if (isNaN(parsed)) {
                     alert("Fils de pute");
                     can_continue = false;

@@ -31,8 +31,8 @@
         <div class="flex flex-row">
             <p>Trier par: </p>
             <select id="price-sort">
-                <option name="desc" class="border border-solid border-blue-600">Prix Décroissant</option>
-                <option name="asc" class="border border-solid border-blue-600">Prix Croissant</option>
+                <option name="desc" class="border border-solid border-blue-600" value="desc">Prix Décroissant</option>
+                <option name="asc" class="border border-solid border-blue-600" value="asc">Prix Croissant</option>
             </select>
         </div>
     </div>
@@ -49,7 +49,7 @@
 
     $products = $stmt->fetchAll();
 
-    echo "<div class='flex flex-row m-5'>";
+    echo "<div id='cards-container' class='flex flex-row m-5'>";
     foreach ($products as $product) {
         $image = base64_encode($product["image"]);
         $image_mime = "image/jpeg";
