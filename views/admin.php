@@ -3,9 +3,9 @@
 
 <head>
     <title>Site Vitrine - Admin</title>
-    <link rel="stylesheet" href="./static/style/tailwind.css">
-    <link rel="stylesheet" href="./static/style/custom.css">
-    <script src="./static/js/main.js" defer></script>
+    <link rel="stylesheet" href="/static/style/tailwind.css">
+    <link rel="stylesheet" href="/static/style/custom.css">
+    <script src="/static/js/main.js" defer></script>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
             $_SESSION["admin"] = true;
             echo "<p class=\"text-green-600\"> Connecté !</p>";
 
-            header("Location: index.php");
+            header("Location: /index.php");
             die();
         } else {
             echo "<p class=\"text-red-600\">Erreur: nom d'utilisateur ou mot de passe invalide.</p>";
