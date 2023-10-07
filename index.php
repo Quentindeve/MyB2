@@ -16,6 +16,9 @@
     ?>
 
     <div id="description" class="mt-5 flex flex-col items-center">
+        <?php
+        include("views/header.php");
+        ?>
         <h1 class="text-3xl">Bienvenue sur le site de notre magasin !</h1>
         <p class="text-xl">
             Retrouvez toutes vos licences de jeu-vidéo préférées sur notre magasin !
@@ -24,16 +27,13 @@
             <h1 class="text-2xl text-center mt-4">Nos produits phares</h1>
             <div class="carousel">
                 <?php
-                include("config.php");
-                $req = "SELECT image FROM products LIMIT 3";
-                $stmt = $db->prepare($req);
-                $stmt->execute();
+                require_once("model/product.php");
 
                 echo "<script>";
                 $i = 0;
                 $first = null;
-                foreach ($stmt->fetchAll() as $img) {
-                    $image = base64_encode($img["image"]);
+                foreach (Product::get_products() as $product) {
+                    $image = $product->image;
                     $image_mime = "image/jpeg";
                     $img_code = 'data:' . $image_mime . ';base64,' . $image;
                     if ($i == 0) {
