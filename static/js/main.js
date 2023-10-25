@@ -1,6 +1,5 @@
 // Zooms
-const zoomables = document.getElementsByClassName("zoomable");
-
+const zoomables = document.getElementsByClassName("zoomable")
 for (let i = 0; i < zoomables.length; i++) {
     const item = zoomables[i];
     item.addEventListener("mouseover", (e) => {

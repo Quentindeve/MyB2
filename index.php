@@ -12,13 +12,10 @@
 
 <body class="bg-slate-100">
     <?php
-    include("header.php");
+    include("views/header.php");
     ?>
 
     <div id="description" class="mt-5 flex flex-col items-center">
-        <?php
-        include("views/header.php");
-        ?>
         <h1 class="text-3xl">Bienvenue sur le site de notre magasin !</h1>
         <p class="text-xl">
             Retrouvez toutes vos licences de jeu-vidéo préférées sur notre magasin !

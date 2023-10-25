@@ -27,6 +27,17 @@
         <input type="hidden" name="MAX_FILE_SIZE" value="999999999" />
         <label for="product_illustration">Illustration</label>
         <input type="file" name="product_illustration">
+        <select name="category">
+            <?php
+            require_once("../model/categories.php");
+            $categories = products_categories();
+            $cats_ids = array_keys($categories);
+            foreach ($cats_ids as $cat_id) {
+                $cat_val = $categories[$cat_id];
+                echo "<option value='$cat_id'>$cat_val</option>";
+            }
+            ?>
+        </select>
 
         <input type="submit" name="submitted">
     </form>

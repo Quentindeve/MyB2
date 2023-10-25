@@ -2,6 +2,7 @@
     <img src="/static/img/logo.svg" class="w-1/5 h-1/5 ignore" />
     <a href="/index.php" class="ignore">Accueil</a>
     <a href="/views/products.php" class="ignore">Produits</a>
+    <a href="/views/statistics.php" class="ignore">Statistiques</a>
     <a href="/views/admin.php" class="ignore">Admin</a>
     <a id="theme-switch" class="ignore"><img src="/static/img/theme.svg" class="ignore" /></a>
     <?php

@@ -48,10 +48,14 @@
         $name = $product->name;
         $price = $product->price;
         $description = $product->description;
+        $category = $product->category;
 
         echo
         "<div class='bg-slate-300 flex flex-col card items-center m p-3 ml-2 mr-2'>
-            <span class='p-name'>$name</span>
+            <a href='product_page.php?product_id=$product->id'>
+                <span class='p-name'>$name</span>
+            </a>
+            <span class='p-name'>$category</span>
             $img_code
             <span class='p-desc'>$description</span>
             <span class='p-price'>$price €</span>
