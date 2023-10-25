@@ -18,8 +18,14 @@ if (isset($product_illustration)) {
     $product->image = base64_encode($file);
 }
 
+if (isset($category)) {
+    $product->category = $category;
+}
+
 $result = $product->save();
 
+// If the operation failed
 if (!$result) header("Location: /views/edit_product?error=1");
 
+// Else
 else header("Location: /views/edit_product.php?error=0");
